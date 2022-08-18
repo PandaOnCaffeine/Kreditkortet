@@ -33,6 +33,53 @@
             numbers = numbers.SkipLast(1).ToArray();
             numbers = numbers.Reverse().ToArray();
 
+            string str = "";
+
+            int num1 = 0;
+            int num2 = 0;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    numbers[i] = numbers[i] * 2;
+                    if (numbers[i] >= 10)
+                    {
+                        str = numbers[i].ToString();
+
+                        num1 = int.Parse(str[0].ToString());
+                        num2 = int.Parse(str[1].ToString());
+
+                        numbers[i] = num1 + num2;
+                    }
+                }
+
+            }
+
+            string sumtxt = "";
+            int sum = 0;
+            foreach (int i in numbers)
+            {
+                sum += i;
+            }
+
+            sumtxt = sum.ToString();
+            sumtxt.Split();
+            
+            int final = 10;
+
+            final = final - sumtxt[1];
+
+
+
+            if (final == check)
+            {
+                Console.WriteLine("Gyldigt");
+            }
+            else
+            {
+                Console.WriteLine("Ikke Gyldigt");
+            }
 
 
 
